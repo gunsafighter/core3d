@@ -11,6 +11,9 @@
 #	pragma comment(lib, "../Core3D/libpng/libpngd.lib")
 #	pragma comment(lib, "../Core3D/zlib/zlibd.lib")
 #else
+#	pragma comment(lib, "../release/Core3D.lib")
+#	pragma comment(lib, "../Core3D/libpng/libpng.lib")
+#	pragma comment(lib, "../Core3D/zlib/zlib.lib")
 #endif
 
 bool App::CreateWorld()

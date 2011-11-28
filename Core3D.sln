@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core3D", "Core3D\Core3D.vcproj", "{138545D4-D8A9-44BF-B282-F01EDE78DDFD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample_Checkboard", "Sample_Checkboard\Sample_Checkboard.vcproj", "{37998280-1C59-4440-BB09-FA7DE26035C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{F77985E9-D60B-4A7E-A580-375335D4C0E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample_Bubble", "Sample_Bubble\Sample_Bubble.vcproj", "{1EF9E5FA-B363-4433-8E81-0E09C6B4799D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +23,16 @@ Global
 		{37998280-1C59-4440-BB09-FA7DE26035C8}.Debug|Win32.Build.0 = Debug|Win32
 		{37998280-1C59-4440-BB09-FA7DE26035C8}.Release|Win32.ActiveCfg = Release|Win32
 		{37998280-1C59-4440-BB09-FA7DE26035C8}.Release|Win32.Build.0 = Release|Win32
+		{1EF9E5FA-B363-4433-8E81-0E09C6B4799D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1EF9E5FA-B363-4433-8E81-0E09C6B4799D}.Debug|Win32.Build.0 = Debug|Win32
+		{1EF9E5FA-B363-4433-8E81-0E09C6B4799D}.Release|Win32.ActiveCfg = Release|Win32
+		{1EF9E5FA-B363-4433-8E81-0E09C6B4799D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37998280-1C59-4440-BB09-FA7DE26035C8} = {F77985E9-D60B-4A7E-A580-375335D4C0E0}
+		{1EF9E5FA-B363-4433-8E81-0E09C6B4799D} = {F77985E9-D60B-4A7E-A580-375335D4C0E0}
 	EndGlobalSection
 EndGlobal
