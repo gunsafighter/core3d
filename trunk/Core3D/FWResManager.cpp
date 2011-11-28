@@ -6,6 +6,7 @@
 #include "FWTexture.h"
 
 #include "libpng/png.h"
+#include <Windows.h>
 
 namespace Core3D
 {
@@ -146,7 +147,13 @@ namespace Core3D
 		if(0 == uiLength) {return NULL;}
 
 		std::vector<tstring> vecFileNames;
+	#ifdef _UNICODE
+		tchar strBuffer[256];
+		::MultiByteToWideChar(CP_ACP, 0, reinterpret_cast<char*>(pData), -1, strBuffer, sizeof(strBuffer));
+		tchar* pCurrentPosition = strBuffer;
+	#else
 		tchar* pCurrentPosition	= reinterpret_cast<tchar*>(pData);
+	#endif
 		while(true)
 		{
 			tchar* pEndOfLine	= _tcschr(pCurrentPosition, _T('\n'));
