@@ -95,7 +95,7 @@ namespace Core3D
 					const Vector3 akDelta[2] = 
 					{
 						akNewVertex[1].kPosition - akNewVertex[0].kPosition, 
-						akNewVertex[2].kPosition = akNewVertex[0].kPosition
+						akNewVertex[2].kPosition - akNewVertex[0].kPosition
 					};
 					const FLOAT32 afDeltaV[2] = 
 					{
