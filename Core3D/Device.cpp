@@ -1361,7 +1361,7 @@ namespace Core3D
 		std::vector<UINT32>::iterator iterVertexIndex = vecVertexIndices.begin();
 		UINT auiVertexIndices[3]	= {*iterVertexIndex++, *iterVertexIndex++, *iterVertexIndex++};
 		bool bFlip					= false; // Used when drawing triangle strips
-		while(uiPrimitiveCount--)
+		while(--uiPrimitiveCount)
 		{
 			VertexCacheEntry* apkVertices[3] = {NULL, NULL, NULL};
 			for(UINT32 uiVertex = 0; uiVertex < 3; ++uiVertex)
@@ -2266,6 +2266,7 @@ namespace Core3D
 				m_kTriangleInfo.fCurrentPixelInvW = 1.0f / kPSInput.kPosition.w;
 				MultiplyVertexShaderOutputRegisters(&kPSInput, &kPSInput, m_kTriangleInfo.fCurrentPixelInvW);
 
+				if(uiPixelY > m_pkRenderTarget->GetColorBuffer()->GetHeight()) {continue;} // uiPixelY의 값이 Color Buffer의 크기 보다 클 수 있어 그 범위를 제한 함.
 				if(0 == LINE_THICKNESS_HALF) {(this->*m_kRenderInfo.pfnDrawPixel)(uiPixelX, uiPixelY, &kPSInput);}
 				else
 				{
@@ -2303,6 +2304,7 @@ namespace Core3D
 				m_kTriangleInfo.fCurrentPixelInvW = 1.0f / kPSInput.kPosition.w;
 				MultiplyVertexShaderOutputRegisters(&kPSInput, &kPSInput, m_kTriangleInfo.fCurrentPixelInvW);
 
+				if(uiPixelY > m_pkRenderTarget->GetColorBuffer()->GetHeight()) {continue;} // uiPixelY의 값이 Color Buffer의 크기 보다 클 수 있어 그 범위를 제한 함.
 				if(0 == LINE_THICKNESS_HALF) {(this->*m_kRenderInfo.pfnDrawPixel)(uiPixelX, uiPixelY, &kPSInput);}
 				else
 				{

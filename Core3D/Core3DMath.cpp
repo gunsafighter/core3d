@@ -403,14 +403,14 @@ namespace Core3D
 			UINT32 j = NEXT[i];
 			UINT32 k = NEXT[j];
 
-			FLOAT32 fSqrt	= sqrtf(rkMat[i, i] - (rkMat[j, j] + rkMat(k, k)) + 1.0f);
+			FLOAT32 fSqrt	= sqrtf(rkMat(i, i) - (rkMat(j, j) + rkMat(k, k)) + 1.0f);
 			fQuat[i]		= fSqrt * 0.5f;
 
 			if(FLT_EPSILON <= fSqrt) {fSqrt = 0.5f / fSqrt;}
 
-			fQuat[3] = (rkMat[k, j] - rkMat[j, k]) * fSqrt;
-			fQuat[j] = (rkMat(j, i) + rkMat[i, j]) * fSqrt;
-			fQuat[k] = (rkMat(k, i) + rkMat[i, k]) * fSqrt;
+			fQuat[3] = (rkMat(k, j) - rkMat(j, k)) * fSqrt;
+			fQuat[j] = (rkMat(j, i) + rkMat(i, j)) * fSqrt;
+			fQuat[k] = (rkMat(k, i) + rkMat(i, k)) * fSqrt;
 
 			rkOut.x = fQuat[0];
 			rkOut.y = fQuat[1];

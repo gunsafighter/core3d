@@ -25,6 +25,7 @@ namespace Core3D
 		FWObjModel(FWResManager* pkResMgr);
 		~FWObjModel();
 
+	public:
 		bool			LoadModel(const char* pData);
 		FWResManager*	GetResManager();
 
